@@ -15,7 +15,8 @@
 </div>
 
 <div class="container" style="display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;">
-    <div class="page-header" id="banner" style="width:700px">
+    <div style="width:700px">
+    <div class="page-header" id="banner">
         <div style="display: flex; align-items: center; justify-content: space-between;">
             <div>
                 <h2>Completed Reminders</h2>
@@ -48,6 +49,7 @@
 
         <? } ?>
 
-    </table>                                             
+    </table>
+    </div>
 </div>
 <?php require_once 'app/views/templates/footer.php' ?>

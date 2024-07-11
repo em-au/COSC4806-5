@@ -13,7 +13,7 @@
 </div>
 <div class="container" style="display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;">
     
-    <div>
+    <div style="width:600px">
     <div class="page-header" id="banner" >
         <div style="display: flex; align-items: center; justify-content: space-between">
             <div>
