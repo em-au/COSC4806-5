@@ -51,13 +51,12 @@
     </div>
 </div>
 
-<?php
+<?php // Limit to top 10?
     foreach($data['reminders'] as $reminder) {
         $username[] = $reminder['username'];
         $num_reminders[] = $reminder['Number of Reminders'];
     }
 ?>
-
 
 <div class="container" style="height: 300px; width: 600px;">
   <canvas id="myChart"></canvas>
