@@ -13,41 +13,48 @@
                 <? echo ucwords($_SESSION['controller'])?></li>
           </ol>
         </nav>
-    </div>
-</div>
 
-<div class="container" style="display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;">
-    <div style="width:700px">
-    <div class="page-header" id="banner">
-        <div style="display: flex; align-items: center; justify-content: space-between;">
-            <div>
-                <h2>Users by Number of Reminders</h2>
+        <div class="page-header" id="banner">
+            <div style="display: flex; align-items: center; justify-content: space-between;">
+                <div>
+                    <h2>Users by Number of Reminders</h2>
+                </div>
             </div>
         </div>
-    </div>
-    <br>
+    </div>    
+</div>
 
-    <?php 
-        if (empty($data['reminders'])) { ?>
-            <div class="alert alert-warning" role="alert">There are no reminders</div>
-        <? }
-        else { ?>
-            <table class="table align-middle" style="width:800px">
+<div class="container" style="display:flex">
+    <!-- Container for table -->
+    <div class="container" style="text-align: center">
+        <div>
+            <?php 
+                if (empty($data['reminders'])) { ?>
+                    <div class="alert alert-warning" role="alert">There are no reminders</div>
+                <? }
+                else { ?>
+                    <table class="table align-middle" style="width:400px">
+                        <tr>
+                            <th>Username</th>
+                            <th>Number of Reminders</th>
+                        </tr>
+                <? } ?>
+            <?php
+                foreach($data['reminders'] as $reminder) { ?>
                 <tr>
-                    <th>Username</th>
-                    <th>Number of Reminders</th>
+                    <td><?php echo $reminder['username']; ?></td>
+                    <td><?php echo $reminder['Number of Reminders']; ?></td>
                 </tr>
-        <? } ?>
-    <?php
-        foreach($data['reminders'] as $reminder) { ?>
-        <tr>
-            <td><?php echo $reminder['username']; ?></td>
-            <td><?php echo $reminder['Number of Reminders']; ?></td>
-        </tr>
+        
+                <? } ?>
+        
+            </table>
+        </div>
+    </div>
 
-        <? } ?>
-
-    </table>
+    <!-- Container for chart -->
+    <div class="container">
+      <canvas id="myChart"></canvas>
     </div>
 </div>
 
@@ -57,10 +64,6 @@
         $num_reminders[] = $reminder['Number of Reminders'];
     }
 ?>
-
-<div class="container" style="height: 300px; width: 600px;">
-  <canvas id="myChart"></canvas>
-</div>
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
