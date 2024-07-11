@@ -32,7 +32,7 @@
             <div class="alert alert-warning" role="alert">You have no completed reminders!</div>
         <? }
         else { ?>
-            <table class="table align-middle" style="width:700px">
+            <table class="table align-middle" style="width:700px; text-align: left">
                 <tr>
                     <th>Reminder</th>
                     <th>Created</th>
@@ -42,7 +42,7 @@
     <?php
         foreach($data['reminders'] as $reminder) { ?>
         <tr>
-            <td align="left" style="width:300px"><?php echo $reminder['subject']; ?></td>
+            <td style="width:300px"><?php echo $reminder['subject']; ?></td>
             <td><?php echo $reminder['created_at']; ?></td>
             <td><?php echo $reminder['completed_at']; ?></td>
         </tr>
