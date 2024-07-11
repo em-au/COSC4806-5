@@ -3,12 +3,6 @@
 class Reports extends Controller {
 
   public function index() {
-    if (!isset($_SESSION['admin'])) {
-      header('location: home');
-      die;
-    }
-
-    
     $reminder = $this->model('Reminder');
     $reminders = $reminder->get_all_reminders_for_admin();
     foreach($reminders as &$reminder) { // Convert timezone of the timestamps from database (UTC)

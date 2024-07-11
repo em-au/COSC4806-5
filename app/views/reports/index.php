@@ -1,6 +1,11 @@
-<?php require_once 'app/views/templates/header.php' 
-// IF NOT ADMIN, REDIRECT 
-// if (!isset($_SESSION['admin'])) redirect)
+<?php 
+    ob_start();
+    require_once 'app/views/templates/header.php'; 
+    if (!isset($_SESSION['admin'])) {
+        header('location: /home');
+    }
+    ob_end_flush();
+    die;
 ?>
 
 <!-- UPDATE BREADCRUMB PATH -->
