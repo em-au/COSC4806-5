@@ -1,7 +1,20 @@
 <?php require_once 'app/views/templates/header.php' ?>
-<br>
+
+<div class="container" style="margin-top: 5px">
+    <div class="col-lg-12">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="/">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page">
+                <? echo ucwords($_SESSION['controller'])?></li>
+          </ol>
+        </nav>
+    </div>
+</div>
 <div class="container" style="display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;">
-    <div class="page-header" id="banner" style="width:600px">
+    
+    <div>
+    <div class="page-header" id="banner" >
         <div style="display: flex; align-items: center; justify-content: space-between">
             <div>
                 <h2>Reminders</h2>
@@ -11,10 +24,10 @@
                 <a href="/reminders/create_form"><button type="button" class="btn btn-primary">Add</button></a>
             </div>
         </div>
-
     </div>
     <br>
-    <table class="table align-middle bottom-bordered" style="width:600px"> 
+    
+    <table class="table align-middle bottom-bordered"> 
     <?php
         if (empty($data['reminders'])) { ?>
             <div class="alert alert-warning" role="alert">You currently have no reminders!</div>
@@ -31,5 +44,6 @@
         <? } ?>
 
     </table>
+    </div>
 </div>
 <?php require_once 'app/views/templates/footer.php' ?>

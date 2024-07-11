@@ -1,5 +1,19 @@
 <?php require_once 'app/views/templates/header.php' ?>
-<br>
+
+<div class="container" style="margin-top: 5px">
+    <div class="col-lg-12">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="/">Home</a></li>
+            <li class="breadcrumb-item" aria-current="page"><a href="/reminders">
+                <? echo ucwords($_SESSION['controller'])?></a></li>
+              <li class="breadcrumb-item active" aria-current="page">
+              <? echo ucwords(str_replace("_", " ", $_SESSION['method']))?></li>
+          </ol>
+        </nav>
+    </div>
+</div>
+
 <div class="container" style="display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;">
     <div class="page-header" id="banner" style="width:700px">
         <div style="display: flex; align-items: center; justify-content: space-between;">
