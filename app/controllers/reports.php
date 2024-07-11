@@ -14,5 +14,17 @@ class Reports extends Controller {
     $this->view('reports/index', ['reminders' => $reminders]);
   }
 
+  public function most_reminders() {
+    $reminder = $this->model('Reminder');
+    $reminders = $reminder->get_users_by_num_reminders();
+    $this->view('reports/most-reminders', ['reminders' => $reminders]);
+  }
+
+  public function num_logins() {
+    $log = $this->model('Log');
+    $log = $log->get_num_logins();
+    $this->view('reports/logins', ['logins' => $log]);
+  }
+
 }
 ?>

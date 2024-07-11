@@ -59,5 +59,17 @@ class Log {
     $rows = $statement->fetch(PDO::FETCH_ASSOC);
     $this->time = $rows['time'];
   }
+
+  public function get_num_logins() { // Sort by username (alphabetical) or by num of logins?
+    $db = db_connect();
+    $statement = $db->prepare("SELECT username, COUNT(username) AS 'Number of Logins'
+      FROM logs
+      WHERE success = 1
+      GROUP BY username
+      ORDER BY username");
+    $statement->execute();
+    $rows = $statement->fetchAll(PDO::FETCH_ASSOC);
+    return $rows;
+  }
 }
 ?>

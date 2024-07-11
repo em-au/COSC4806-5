@@ -87,7 +87,21 @@ class Reminder {
     return $rows;
   }
 
-  public function get_user_with_most_reminders() {
+  public function get_users_by_num_reminders() { // Incomplete + complete reminders
+    $db = db_connect();
+    $statement = $db->prepare("SELECT u.username, COUNT(r.id) AS 'Number of Reminders'
+      FROM reminders AS r
+      INNER JOIN users as u
+      ON r.user_id = u.id
+      WHERE r.deleted = 0
+      GROUP BY u.username
+      ORDER BY 'Number of Reminders' DESC");
+    $statement->execute();
+    $rows = $statement->fetchAll(PDO::FETCH_ASSOC);
+    return $rows;
+  }
+
+  public function get_users_by_num_complete_reminders() { // Implement this function?
     
   }
 }
