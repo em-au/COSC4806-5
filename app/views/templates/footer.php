@@ -3,7 +3,7 @@
     bottom: 0;
     width: 100%;
     text-align: center;"
-    <p>Copyright &copy; <?php echo date('Y'); ?> </p>
+    <p>&copy; <?php echo "Emily Au " . date('Y'); ?> </p>
 </footer>
 
 </div>
