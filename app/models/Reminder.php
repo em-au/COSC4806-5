@@ -72,5 +72,23 @@ class Reminder {
     $statement->execute();
   }
 
+  // Admin functions
+  public function get_all_reminders_for_admin() {
+    $db = db_connect();
+    $statement = $db->prepare("SELECT u.username, r.subject, r.completed, r.created_at 
+      FROM reminders AS r 
+      INNER JOIN users as u 
+      ON r.user_id = u.id 
+      WHERE r.deleted = 0 
+      ORDER BY r.created_at DESC");
+    // INNER JOIN? what about deleted users - but users can't actually delete themselves from db
+    $statement->execute();
+    $rows = $statement->fetchAll(PDO::FETCH_ASSOC);
+    return $rows;
+  }
+
+  public function get_user_with_most_reminders() {
+    
+  }
 }
 ?>
