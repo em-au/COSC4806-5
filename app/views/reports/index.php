@@ -16,7 +16,7 @@
     </div>
 </div>
 
-<div class="container" style="display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;">
+<div class="container" style="display: flex; flex-direction: column; justify-content: center; align-items: center">
     <div style="width:700px">
     <div class="page-header" id="banner">
         <div style="display: flex; align-items: center; justify-content: space-between;">

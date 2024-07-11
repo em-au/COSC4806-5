@@ -13,54 +13,57 @@
                 <? echo ucwords($_SESSION['controller'])?></li>
           </ol>
         </nav>
-    </div>
-</div>
 
-<div class="container" style="display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;">
-    <div style="width:700px">
-    <div class="page-header" id="banner">
-        <div style="display: flex; align-items: center; justify-content: space-between;">
-            <div>
-                <h2>Users by Number of Logins</h2>
+        <div class="page-header" id="banner">
+            <div style="display: flex; align-items: center; justify-content: space-between;">
+                <div>
+                    <h2>Users by Number of Logins</h2>
+                </div>
             </div>
         </div>
     </div>
-    <br>
-
-    <?php 
-        if (empty($data['logins'])) { ?>
-            <div class="alert alert-warning" role="alert">There are no logins</div>
-        <? }
-        else { ?>
-            <table class="table align-middle" style="width:800px">
-                <tr>
-                    <th>Username</th>
-                    <th>Number of Logins</th>
-                </tr>
-        <? } ?>
-    <?php
-        foreach($data['logins'] as $login) { ?>
-        <tr>
-            <td><?php echo $login['username']; ?></td>
-            <td><?php echo $login['Number of Logins']; ?></td>
-        </tr>
-
-        <? } ?>
-
-    </table>
-    </div>
 </div>
 
+<div class="container" style="display:flex">
+    <!-- Container for table -->
+    <div class="container" style="text-align: center">
+        <div>
+            <?php 
+                if (empty($data['logins'])) { ?>
+                    <div class="alert alert-warning" role="alert">There are no logins</div>
+                <? }
+                else { ?>
+                    <table class="table align-middle" style="width:400px">
+                        <tr>
+                            <th>Username</th>
+                            <th>Number of Logins</th>
+                        </tr>
+                <? } ?>
+            <?php
+                foreach($data['logins'] as $login) { ?>
+                <tr>
+                    <td><?php echo $login['username']; ?></td>
+                    <td><?php echo $login['Number of Logins']; ?></td>
+                </tr>
+        
+                <? } ?>
+        
+            </table>
+        </div>
+    </div>
+
+    <!-- Container for chart -->
+    <div class="container">
+      <canvas id="myChart"></canvas>
+    </div>
+</div>
+    
 <?php // Limit to top 10?
     foreach($data['logins'] as $login) {
         $username[] = $login['username'];
         $num_logins[] = $login['Number of Logins'];
     }
 ?>
-
-<div class="container" style="height: 300px; width: 600px;">
-  <canvas id="myChart"></canvas>
-</div>
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
