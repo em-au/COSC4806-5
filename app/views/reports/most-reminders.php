@@ -1,11 +1,11 @@
 <?php 
-    ob_start();
+   ob_start();
     require_once 'app/views/templates/header.php'; 
     if (!isset($_SESSION['admin'])) {
         header('location: /home');
+        ob_end_flush();
+        die;
     }
-    ob_end_flush();
-    die;
 ?>
 
 <!-- UPDATE BREADCRUMB PATH -->
