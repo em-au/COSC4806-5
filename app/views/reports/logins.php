@@ -21,33 +21,28 @@
     <div class="page-header" id="banner">
         <div style="display: flex; align-items: center; justify-content: space-between;">
             <div>
-                <h2>All Reminders</h2>
+                <h2>Users by Number of Logins</h2>
             </div>
         </div>
     </div>
     <br>
-      
+
     <?php 
-        if (empty($data['reminders'])) { ?>
-            <div class="alert alert-warning" role="alert">There are no reminders</div>
+        if (empty($data['logins'])) { ?>
+            <div class="alert alert-warning" role="alert">There are no logins</div>
         <? }
         else { ?>
             <table class="table align-middle" style="width:800px">
                 <tr>
                     <th>Username</th>
-                    <th>Reminder</th>
-                    <th>Completed</th>
-                    <th>Created</th>
+                    <th>Number of Logins</th>
                 </tr>
         <? } ?>
     <?php
-        foreach($data['reminders'] as $reminder) { ?>
+        foreach($data['logins'] as $login) { ?>
         <tr>
-            <td><?php echo $reminder['username']; ?></td>
-            <td align="left"><?php echo $reminder['subject']; ?></td>
-            <td><?php if ($reminder['completed'] == 1) echo "Yes";
-              else echo "No";?></td>
-            <td><?php echo $reminder['created_at']; ?></td>
+            <td><?php echo $login['username']; ?></td>
+            <td><?php echo $login['Number of Logins']; ?></td>
         </tr>
 
         <? } ?>
@@ -55,6 +50,4 @@
     </table>
     </div>
 </div>
-<a href="reports/most_reminders">See users by number of reminders</a><br>
-<a href="reports/num_logins">See users by number of logins</a>
 <?php require_once 'app/views/templates/footer.php' ?>
