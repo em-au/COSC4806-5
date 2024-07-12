@@ -3,6 +3,10 @@
 class Reports extends Controller {
 
   public function index() {
+    $this->view('reports/index');
+  }
+
+  public function all_reminders() {
     $reminder = $this->model('Reminder');
     $reminders = $reminder->get_all_reminders_for_admin();
     foreach($reminders as &$reminder) { // Convert timezone of the timestamps from database (UTC)
@@ -11,8 +15,9 @@ class Reports extends Controller {
       $date_created = $date_created->format('F j, Y g:i a'); // Convert DateTime object to string
       $reminder['created_at'] = $date_created;
     }
-    $this->view('reports/index', ['reminders' => $reminders]);
+    $this->view('reports/all-reminders', ['reminders' => $reminders]);
   }
+  
 
   public function most_reminders() {
     $reminder = $this->model('Reminder');
