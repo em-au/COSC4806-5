@@ -22,24 +22,35 @@
 
         <div class="page-header" id="banner">
             <div style="display: flex; align-items: center; justify-content: space-between;">
-                <div>
-                    <h2>Users by Number of Reminders</h2>
+                <div class="d-flex" style="gap: 10px; margin-bottom: 10px">
+                        <div class="btn-group">
+                          <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" data-bs-auto-close="true" aria-expanded="false">
+                              <i class="fa-solid fa-bars"></i>
+                          </button>
+                          <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="/reports">Reports</a></li>
+                            <li><a class="dropdown-item" href="/reports/all_reminders">All Reminders</a></li>
+                            <li><a class="dropdown-item disabled" aria-disabled="true">Users by Reminders</a></li>
+                          <li><a class="dropdown-item" href="/reports/number_of_logins">Users by Logins</a></li>
+                          </ul>
+                        </div>
+                        <div><h2 style="margin: 0px">Users by Number of Reminders</h2></div>
                 </div>
             </div>
         </div>
     </div>    
 </div>
 
-<div class="container" style="display:flex">
+<div class="container" style="display:flex; gap: 30px">
     <!-- Container for table -->
-    <div class="container">
+    <div class="container" style="width:400px">
         <div>
             <?php 
                 if (empty($data['reminders'])) { ?>
                     <div class="alert alert-warning" role="alert">There are no reminders</div>
                 <? }
                 else { ?>
-                    <table class="table align-middle" style="width:400px">
+                    <table class="table align-middle">
                         <tr>
                             <th>Username</th>
                             <th>Total Reminders</th>
@@ -64,7 +75,7 @@
     </div>
 </div>
 
-<?php // Limit to top 10?
+<?php
     foreach($data['reminders'] as $reminder) {
         $username[] = $reminder['username'];
         $num_reminders[] = $reminder['Number of Reminders'];
@@ -115,7 +126,7 @@
             y: {
                 title: {
                   display: true,
-                  text: 'Number of Reminders'
+                  text: 'Total Reminders'
                 },
                 beginAtZero: true,
                 ticks: {

@@ -22,12 +22,23 @@
     </div>
 </div>
 
-<div class="container" style="display: flex; flex-direction: column; justify-content: center; align-items: center">
-    <div style="width:700px">
+<div class="container" >
+    <div>
     <div class="page-header" id="banner">
         <div style="display: flex; align-items: center; justify-content: space-between;">
-            <div>
-                <h2>All Reminders</h2>
+            <div class="d-flex" style="gap: 10px; margin-bottom: 10px">
+                    <div class="btn-group">
+                      <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" data-bs-auto-close="true" aria-expanded="false">
+                          <i class="fa-solid fa-bars"></i>
+                      </button>
+                      <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/reports">Reports</a></li>
+                        <li><a class="dropdown-item disabled" aria-disabled="true">All Reminders</a></li>
+                        <li><a class="dropdown-item" href="/reports/most_reminders">Users by Reminders</a></li>
+                      <li><a class="dropdown-item" href="/reports/number_of_logins">Users by Logins</a></li>
+                      </ul>
+                    </div>
+                    <div><h2 style="margin: 0px">All Reminders</h2></div>
             </div>
         </div>
     </div>
@@ -38,7 +49,7 @@
             <div class="alert alert-warning" role="alert">There are no reminders</div>
         <? }
         else { ?>
-            <table class="table align-middle" style="width:800px">
+            <table class="table align-middle">
                 <tr>
                     <th>Username</th>
                     <th>Reminder</th>
