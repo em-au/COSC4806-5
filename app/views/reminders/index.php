@@ -21,12 +21,38 @@
             </div>
             <div >
                 <a href="/reminders/completed_reminders"><button type="button" class="btn btn-outline-primary">Completed reminders</button></a>
-                <a href="/reminders/create_form"><button type="button" class="btn btn-primary">Add</button></a>
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addModal">
+                  Add
+                </button>
             </div>
         </div>
     </div>
     <br>
-    
+
+        <!-- Modal -->
+        <div class="modal fade" id="addModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">New Reminder</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                  <form action="/reminders/create_reminder" method="post">
+                  <fieldset>
+                      <div class="form-group" style="text-align: left">
+                          <input required type="text" class="form-control" name="subject" placeholder="Description">
+                      </div>
+                      <br>
+                      <button type="button" class="btn btn-light" data-bs-dismiss="modal">Cancel</button>
+                      <button type="submit" class="btn btn-primary">Submit</button>
+                  </fieldset>
+                  </form> 
+              </div>
+            </div>
+          </div>
+        </div>
+
     <table class="table align-middle bottom-bordered"> 
     <?php
         if (empty($data['reminders'])) { ?>
