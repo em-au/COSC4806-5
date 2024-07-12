@@ -43,7 +43,7 @@
 
 <div class="container" style="display:flex; gap: 30px">
     <!-- Container for table -->
-    <div class="container" style="width:400px">
+    <div class="container" style="width:500px">
         <div>
             <?php 
                 if (empty($data['reminders'])) { ?>
