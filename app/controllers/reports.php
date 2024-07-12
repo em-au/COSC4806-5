@@ -27,7 +27,7 @@ class Reports extends Controller {
     $this->view('reports/most-reminders', ['reminders' => $reminders]);
   }
 
-  public function num_logins() {
+  public function number_of_logins() {
     $log = $this->model('Log');
     $log = $log->get_num_logins();
     $this->view('reports/logins', ['logins' => $log]);

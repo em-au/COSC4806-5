@@ -8,7 +8,6 @@
     }
 ?>
 
-<!-- UPDATE BREADCRUMB PATH -->
 <div class="container" style="margin-top: 5px">
     <div class="col-lg-12">
         <nav aria-label="breadcrumb">
@@ -21,7 +20,7 @@
     </div>
 </div>
 
-<div class="container">
+<div class="container" style="margin-top: 5%">
     <div class="row row-cols-1 row-cols-md-3 g-4">
       <div class="col">
         <div class="card h-100">
@@ -55,7 +54,7 @@
                 <p><i class="fa-solid fa-right-to-bracket fa-2xl"></i></p>
                 Users by Logins</h5>
             <p class="card-text">Click the button below to see users by number of logins.</p>
-          <a href="/reports/num_logins"><button type="button" class="btn btn-primary">
+          <a href="/reports/number_of_logins"><button type="button" class="btn btn-primary">
             See logins</button></a>
           </div>
         </div>

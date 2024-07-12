@@ -8,14 +8,15 @@
     }
 ?>
 
-<!-- UPDATE BREADCRUMB PATH -->
 <div class="container" style="margin-top: 5px">
     <div class="col-lg-12">
         <nav aria-label="breadcrumb">
           <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="/">Home</a></li>
+              <li class="breadcrumb-item" aria-current="page"><a href="/reports">
+                  <? echo ucwords($_SESSION['controller'])?></a></li>
             <li class="breadcrumb-item active" aria-current="page">
-                <? echo ucwords($_SESSION['controller'])?></li>
+                <? echo ucwords(str_replace("_", " ", $_SESSION['method']))?></li>
           </ol>
         </nav>
     </div>
