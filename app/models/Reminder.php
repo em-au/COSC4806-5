@@ -105,7 +105,7 @@ class Reminder {
       ON r.user_id = u.id
       WHERE r.deleted = 0
       GROUP BY u.username
-      ORDER BY 'Number of Reminders' DESC");
+      ORDER BY COUNT(r.id) DESC");
     $statement->execute();
     $rows = $statement->fetchAll(PDO::FETCH_ASSOC);
     return $rows;
