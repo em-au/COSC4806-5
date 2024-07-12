@@ -39,11 +39,15 @@ class Reminders extends Controller {
   public function update_form() {
     $id = $_GET['id'];
     $r = $this->model('Reminder');
+    $reminders = $r->get_incomplete_reminders();
     $reminder = $r->get_reminder_by_id($id);
     if (!($this->is_valid_operation($id))) {
       header('location: /reminders'); die; 
     }
-    $this->view('reminders/update', ['reminder' => $reminder]); // Pass the subject to prepopulate the form
+    // Pass the subject to prepopulate the form
+    $this->view('reminders/index', ['reminder' => $reminder, 
+                'reminders' => $reminders, 
+                'showUpdateModal' => true]); 
   }
 
   public function update_reminder() { 

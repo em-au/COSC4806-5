@@ -29,29 +29,6 @@
     </div>
     <br>
 
-        <!-- Modal -->
-        <div class="modal fade" id="addModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-          <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h1 class="modal-title fs-5" id="exampleModalLabel">New Reminder</h1>
-              </div>
-              <div class="modal-body">
-                  <form action="/reminders/create_reminder" method="post">
-                  <fieldset>
-                      <div class="form-group" style="text-align: left">
-                          <input required type="text" class="form-control" name="subject" placeholder="Description">
-                      </div>
-                      <br>
-                      <a href="/reminders"><button type="button" class="btn btn-light">Cancel</button></a>
-                      <button type="submit" class="btn btn-primary">Submit</button>
-                  </fieldset>
-                  </form> 
-              </div>
-            </div>
-          </div>
-        </div>
-
     <table class="table align-middle bottom-bordered"> 
     <?php
         if (empty($data['reminders'])) { ?>
@@ -71,4 +48,62 @@
     </table>
     </div>
 </div>
+
+<!-- Modal to add a reminder -->
+<div class="modal fade" id="addModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Add Reminder</h1>
+      </div>
+      <div class="modal-body">
+          <form action="/reminders/create_reminder" method="post">
+          <fieldset>
+              <div class="form-group" style="text-align: left">
+                  <input required type="text" class="form-control" name="subject" placeholder="Description">
+              </div>
+              <br>
+              <div style="text-align: right">
+              <a href="/reminders"><button type="button" class="btn btn-light">Cancel</button></a>
+              <button type="submit" class="btn btn-primary">Submit</button>
+              </div>
+          </fieldset>
+          </form> 
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal to update a reminder -->
+<div class="modal fade" id="updateModal" data-bs-backdrop="static" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Edit Reminder</h1>
+      </div>
+      <div class="modal-body">
+          <form action="/reminders/update_reminder/?id=<?php echo $data['reminder']['id']; ?>" method="post">
+          <fieldset>
+              <div class="form-group" style="text-align: left">
+                  <input required type="text" class="form-control" name="subject" value="<? echo $data['reminder']['subject'] ?>" placeholder="Description">
+              </div>
+              <br>
+              <div style="text-align: right">
+                <a href="/reminders"><button type="button" class="btn btn-light">Cancel</button></a>
+                <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+          </fieldset>
+          </form> 
+      </div>
+    </div>
+  </div>
+</div>
+
 <?php require_once 'app/views/templates/footer.php' ?>
+
+<script>
+    <? if ($data['showUpdateModal'] == true) { ?>
+        var myModal = new bootstrap.Modal(document.getElementById('updateModal'), {})
+        myModal.toggle()
+    <? } ?>
+</script>
