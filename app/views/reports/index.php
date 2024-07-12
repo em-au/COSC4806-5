@@ -21,6 +21,42 @@
     </div>
 </div>
 
+<div class="container">
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+      <div class="col">
+        <div class="card h-100">
+          <div class="card-body">
+            <h5 class="card-title">
+                <p><i class="fa-solid fa-bell fa-2xl" ></i></p>
+                <? echo "Total Reminders: " . $data['num_all_reminders']?></h5>
+            <p class="card-text">
+                Click the button below to see all incomplete and complete reminders for all users</p>
+            <a href="reports/all_reminders"><button type="button" class="btn btn-primary">
+                All reminders</button></a>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card h-100">
+          <img src="..." class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">This is a short card.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card h-100">
+          <img src="..." class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+
 
 <a href="reports/all_reminders">See all reminders</a><br>
 <a href="reports/most_reminders">See users by number of reminders</a><br>
