@@ -27,7 +27,7 @@
           <div class="card-body">
             <h5 class="card-title">
                 <p><i class="fa-solid fa-bell fa-2xl" ></i></p>
-                <? echo "Total Reminders: " . $data['num_all_reminders']?></h5>
+                All Reminders</h5>
             <p class="card-text">
                 Click the button below to see all incomplete and complete reminders for all users</p>
             <a href="/reports/all_reminders"><button type="button" class="btn btn-primary">

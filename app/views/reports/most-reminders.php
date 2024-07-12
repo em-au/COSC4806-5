@@ -32,7 +32,7 @@
 
 <div class="container" style="display:flex">
     <!-- Container for table -->
-    <div class="container" style="text-align: center">
+    <div class="container">
         <div>
             <?php 
                 if (empty($data['reminders'])) { ?>
@@ -42,7 +42,7 @@
                     <table class="table align-middle" style="width:400px">
                         <tr>
                             <th>Username</th>
-                            <th>Number of Reminders</th>
+                            <th>Total Reminders</th>
                         </tr>
                 <? } ?>
             <?php
