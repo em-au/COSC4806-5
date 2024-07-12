@@ -31,34 +31,36 @@
                 <? echo "Total Reminders: " . $data['num_all_reminders']?></h5>
             <p class="card-text">
                 Click the button below to see all incomplete and complete reminders for all users</p>
-            <a href="reports/all_reminders"><button type="button" class="btn btn-primary">
-                All reminders</button></a>
+            <a href="/reports/all_reminders"><button type="button" class="btn btn-primary">
+                See all reminders</button></a>
           </div>
         </div>
       </div>
       <div class="col">
         <div class="card h-100">
-          <img src="..." class="card-img-top" alt="...">
           <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">This is a short card.</p>
+            <h5 class="card-title">
+                <p><i class="fa-solid fa-user fa-2xl"></i></p>
+                Users by Reminders</h5>
+            <p class="card-text">Click the button below to see users sorted by number of reminders.</p>
+          <a href="/reports/most_reminders"><button type="button" class="btn btn-primary">
+          See users</button></a>
           </div>
         </div>
       </div>
       <div class="col">
         <div class="card h-100">
-          <img src="..." class="card-img-top" alt="...">
           <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content.</p>
+            <h5 class="card-title">
+                <p><i class="fa-solid fa-right-to-bracket fa-2xl"></i></p>
+                Users by Logins</h5>
+            <p class="card-text">Click the button below to see users by number of logins.</p>
+          <a href="/reports/num_logins"><button type="button" class="btn btn-primary">
+            See logins</button></a>
           </div>
         </div>
       </div>
     </div>
 </div>
 
-
-<a href="reports/all_reminders">See all reminders</a><br>
-<a href="reports/most_reminders">See users by number of reminders</a><br>
-<a href="reports/num_logins">See users by number of logins</a>
 <?php require_once 'app/views/templates/footer.php' ?>
