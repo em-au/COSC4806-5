@@ -1,5 +1,5 @@
 <?php require_once 'app/views/templates/headerPublic.php'?>
-<main role="main" class="container" style="display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; min-height: 100vh;">
+<div class="container" style="display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; min-height: 80vh;">
     <div class="page-header" id="banner">
         <div class="row">
             <div class="col-lg-12">
@@ -50,6 +50,6 @@
     <a href="/login">Already have an account? Log in here.</a>
 </footer>
 <br>
-    
+</div>
 <?php require_once 'app/views/templates/footer.php' ?>
     

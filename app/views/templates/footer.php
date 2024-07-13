@@ -4,7 +4,8 @@
     margin-top: auto;
     flex: 0 0 50px;
     padding: 5px;
-    background-color: #e6e6e6"
+    background-color: #e6e6e6;
+    width:100%"
 
     <div style="margin-bottom: 0px">&copy; Emily Au <?php echo date('Y'); ?></div>
     <div style="margin-bottom: 5px">See this project on: <a href="https://github.com/em-au/COSC4806-5" style="color: black"><i class="fa-brands fa-github fa-xl"></i></a></div>

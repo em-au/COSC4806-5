@@ -13,5 +13,6 @@ if (isset($_SESSION['auth']) == 1) {
     <meta name="viewport" content="width=device-width">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="mobile-web-app-capable" content="yes">
+    <script src="https://kit.fontawesome.com/1a161933ae.js" crossorigin="anonymous"></script>
 </head>
-<body>
+<body style="display:flex; flex-direction: column; align-items:center; min-height: 100vh">
