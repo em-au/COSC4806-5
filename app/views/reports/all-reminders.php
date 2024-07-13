@@ -62,8 +62,8 @@
         <tr>
             <td><?php echo $reminder['username']; ?></td>
             <td align="left"><?php echo $reminder['subject']; ?></td>
-            <td><?php if ($reminder['completed'] == 1) echo "Yes";
-              else echo "No";?></td>
+            <td><?php if ($reminder['completed'] == 1) { ?> <i class="fa-solid fa-check fa-lg" style="color: #00a372"></i>
+              <? } else { ?> <i class="fa-solid fa-x fa-lg" style="color: #e63333;"></i> <? };?></td>
             <td><?php echo $reminder['created_at']; ?></td>
         </tr>
 
