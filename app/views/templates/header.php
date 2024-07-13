@@ -15,7 +15,7 @@ if (!isset($_SESSION['auth'])) {
         <meta name="apple-mobile-web-app-capable" content="yes">
         <meta name="mobile-web-app-capable" content="yes">
     </head>
-    <body>
+    <body style="display:flex; flex-direction: column; min-height: 100vh">
 <nav class="navbar navbar-expand-lg border-bottom">
   <div class="container">
     <a class="navbar-brand" href="/home">COSC 4806</a>
