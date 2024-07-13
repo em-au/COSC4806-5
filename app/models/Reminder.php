@@ -72,6 +72,17 @@ class Reminder {
     $statement->execute();
   }
 
+  public function get_num_reminders($id) { // Incomplete reminders
+    $db = db_connect();
+    $statement = $db->prepare("SELECT COUNT(*)
+      FROM reminders
+      WHERE deleted = 0 AND completed = 0 AND user_id = :id");
+    $statement->bindParam(':id', $id);
+    $statement->execute();
+    $rows = $statement->fetch(PDO::FETCH_ASSOC);
+    return $rows['COUNT(*)'];
+  }
+
   // Admin functions
   public function get_all_reminders_for_admin() {
     $db = db_connect();
@@ -84,16 +95,6 @@ class Reminder {
     $statement->execute();
     $rows = $statement->fetchAll(PDO::FETCH_ASSOC);
     return $rows;
-  }
-
-  public function get_num_all_reminders() {
-    $db = db_connect();
-    $statement = $db->prepare("SELECT COUNT(*)
-      FROM reminders
-      WHERE deleted = 0");
-    $statement->execute();
-    $rows = $statement->fetch(PDO::FETCH_ASSOC);
-    return $rows['COUNT(*)'];
   }
 
   public function get_users_by_num_reminders() { // Incomplete + complete reminders

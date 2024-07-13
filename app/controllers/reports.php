@@ -3,9 +3,7 @@
 class Reports extends Controller {
 
   public function index() {
-    $reminder = $this->model('Reminder');
-    $num_all_reminders = $reminder->get_num_all_reminders();
-    $this->view('reports/index', ['num_all_reminders' => $num_all_reminders]);
+    $this->view('reports/index');
   }
 
   public function all_reminders() {

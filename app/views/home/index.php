@@ -9,6 +9,16 @@
             </div>
         </div>
     </div>
+
+    <div class="card">
+      <div class="card-body" style="text-align: center">
+       <div style="margin-bottom: 16px"><i class="fa-regular fa-bell fa-5x" style="color: #0d6efd"></i></div>
+        <h5 class="card-title">You have <? echo $data['num_reminders'] ?>
+          incomplete reminders!<h5>
+        <a href="/reminders" class="btn btn-primary">Get started now</a>
+      </div>
+    </div>
+    
 </div>
 
 <?php require_once 'app/views/templates/footer.php' ?>
