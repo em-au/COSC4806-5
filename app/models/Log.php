@@ -60,7 +60,7 @@ class Log {
     $this->time = $rows['time'];
   }
 
-  public function get_num_logins() { // Sort by username (alphabetical) or by num of logins?
+  public function get_num_logins() {
     $db = db_connect();
     $statement = $db->prepare("SELECT username, COUNT(username) AS 'Number of Logins'
       FROM logs

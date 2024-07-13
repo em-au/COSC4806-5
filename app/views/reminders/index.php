@@ -74,7 +74,9 @@
   </div>
 </div>
 
-<!-- Modal to update a reminder -->
+<!-- Modal to update a reminder 
+Requires a page refresh to get data (reminder's subject) from controller
+to prepopulate the form -->
 <div class="modal fade" id="updateModal" data-bs-backdrop="static" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">

@@ -1,4 +1,3 @@
-
 <footer class="footer" style="
     text-align: center;
     margin-top: auto;

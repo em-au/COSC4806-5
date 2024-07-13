@@ -81,7 +81,6 @@ class Reminder {
       ON r.user_id = u.id 
       WHERE r.deleted = 0 
       ORDER BY r.created_at DESC");
-    // INNER JOIN? what about deleted users - but users can't actually delete themselves from db
     $statement->execute();
     $rows = $statement->fetchAll(PDO::FETCH_ASSOC);
     return $rows;
@@ -109,10 +108,6 @@ class Reminder {
     $statement->execute();
     $rows = $statement->fetchAll(PDO::FETCH_ASSOC);
     return $rows;
-  }
-
-  public function get_users_by_num_complete_reminders() { // Implement this function?
-    
   }
 }
 ?>
