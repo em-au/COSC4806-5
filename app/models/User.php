@@ -34,11 +34,11 @@ class User {
     if (password_verify($password, $rows['password'])) {
       $this->is_authenticated = true;
       $_SESSION['user_id'] = $rows['id'];
+      if ($rows['admin'] == 1) {
+        $_SESSION['admin'] = 1;
+      }
     }
-
-    if ($rows['admin'] == 1) {
-      $_SESSION['admin'] = 1;
-    }
+    
   }
 
   // Check if username exists in the Users table in database

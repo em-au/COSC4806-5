@@ -28,7 +28,7 @@
             <div class="d-flex justify-content-center" style="margin-bottom: 16px"><i class="fa-solid fa-bell fa-3x"></i></div>
             <h5 class="card-title">All Reminders</h5>
             <p class="card-text">
-                Click the button below to see all incomplete and complete reminders for all users</p>
+                Click the button below to see complete and incomplete reminders by all users</p>
             <a href="/reports/all_reminders"><button type="button" class="btn btn-primary">
                 See all reminders</button></a>
           </div>
