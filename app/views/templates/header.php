@@ -16,7 +16,7 @@ if (!isset($_SESSION['auth'])) {
         <meta name="mobile-web-app-capable" content="yes">
     </head>
     <body style="display:flex; flex-direction: column; min-height: 100vh">
-<nav class="navbar navbar-expand-lg border-bottom">
+<nav class="navbar navbar-expand-lg" style="background-color: #bed7eb">
   <div class="container">
     <a class="navbar-brand" href="/home">COSC 4806</a>
     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
