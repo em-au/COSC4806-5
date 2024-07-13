@@ -3,7 +3,10 @@
     bottom: 0;
     width: 100%;
     text-align: center;"
-    <p>&copy; <?php echo "Emily Au " . date('Y'); ?> </p>
+
+    <div style="margin-bottom: 0px">&copy; Emily Au <?php echo date('Y'); ?></div>
+    <p>See this project on: <a href="https://github.com/em-au/COSC4806-5" style="color: black"><i class="fa-brands fa-github fa-xl"></i></a></p>
+    
 </footer>
 
 </div>
